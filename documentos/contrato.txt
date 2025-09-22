@@ -1,4 +1,0 @@
-Este é um contrato de exemplo para o cartório digital.
-Ele serve para demonstrar o registro de documentos em um sistema distribuído.
-O hash deste documento será registrado no ZooKeeper e na blockchain.
-Assinado digitalmente em: 2025-09-05
