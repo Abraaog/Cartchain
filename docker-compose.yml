@@ -1,0 +1,55 @@
+
+services:
+  zoo1:
+    image: zookeeper:3.7
+    hostname: zoo1
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+
+  zoo2:
+    image: zookeeper:3.7
+    hostname: zoo2
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+
+  zoo3:
+    image: zookeeper:3.7
+    hostname: zoo3
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+
+  node1:
+    build: .
+    environment:
+      NODE_ID: 1
+    depends_on:
+      - zoo1
+      - zoo2
+      - zoo3
+    ports:
+      - "5001:5000"
+
+  node2:
+    build: .
+    environment:
+      NODE_ID: 2
+    depends_on:
+      - zoo1
+      - zoo2
+      - zoo3
+    ports:
+      - "5002:5000"
+
+  node3:
+    build: .
+    environment:
+      NODE_ID: 3
+    depends_on:
+      - zoo1
+      - zoo2
+      - zoo3
+    ports:
+      - "5003:5000"
