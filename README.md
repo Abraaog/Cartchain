@@ -130,3 +130,8 @@ cartorio-digital/
 ├── Dockerfile                   # Imagem Docker da aplicação
 └── README.md                    # Documentação do projeto
 ```
+
+## 👥 Autores
+ABRAAO GOMES DA SILVA ARAUJO - @seu-usuario
+THASSO KARLY MORAIS RAMOS - @colega1
+JOHN WESLEY DA SILVA MOREIRA PINTO - @colega2
