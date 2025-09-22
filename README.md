@@ -176,7 +176,7 @@ docker-compose stop node1
 ```bash
 docker-compose start node1
 ```
-# Parar todo o sistema
+### Parar todo o sistema
 ```bash
 docker-compose down
 ```
