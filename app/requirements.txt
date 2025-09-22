@@ -1,0 +1,4 @@
+kazoo==2.8.0
+flask==2.3.3
+requests==2.31.0
+pycryptodome==3.15.0
