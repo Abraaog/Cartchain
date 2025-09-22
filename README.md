@@ -132,6 +132,64 @@ cartorio-digital/
 ```
 
 ## 👥 Autores
-ABRAAO GOMES DA SILVA ARAUJO - @seu-usuario
-THASSO KARLY MORAIS RAMOS - @colega1
-JOHN WESLEY DA SILVA MOREIRA PINTO - @colega2
+
+| Nome | GitHub |
+| :--- | :--- |
+| **ABRAAO GOMES DA SILVA ARAUJO** | [@Abraaog](https://github.com/seu-usuario) |
+| **THASSO KARLY MORAIS RAMOS** | [@Thasso](https://github.com/thassokarly) |
+| **JOHN WESLEY DA SILVA MOREIRA PINTO** | [@JohnWesley](https://github.com/JohnWesleyPinto) |
+
+
+# 🧪 Testes e Validação
+## Cenários de Teste
+### 1. Operação Normal
+- Sistema inicia com 3 nós
+- Um nó é eleito líder
+- Documentos são registrados e replicados
+- Todos os nós permanecem sincronizados
+
+### 2. Falha do Líder
+- Líder atual é identificado
+- Simulação de falha do líder
+- Novo líder é eleito automaticamente
+- Sistema continua operando normalmente
+
+### 3. Verificação de Consistência
+- Comparar blockchain entre todos os nós
+- Verificar replicação bem-sucedida
+- Confirmar integridade dos dados
+
+## Comandos para Testes
+### Verificar status do cluster
+```bash
+docker-compose ps
+```
+### Visualizar logs em tempo real
+```bash
+docker-compose logs -f node1 node2 node3
+```
+### Simular falha de um nó
+```bash
+docker-compose stop node1
+```
+### Reiniciar nó falho
+```bash
+docker-compose start node1
+```
+# Parar todo o sistema
+```bash
+docker-compose down
+```
+## 📈 Resultados Esperados
+### Métricas de Desempenho
+- Tempo de eleição de líder: < 5 segundos
+- Tempo de replicação: < 2 segundos
+- Disponibilidade do sistema: 99.9%
+- Consistência dos dados: 100%
+
+### Indicadores de Sucesso
+- ✅ Sistema distribuído funcional
+- ✅ Eleição de líder operacional
+- ✅ Replicação de dados bem-sucedida
+- ✅ Tolerância a falhas comprovada
+- ✅ Consistência mantida em todos os nós
