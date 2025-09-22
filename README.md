@@ -18,7 +18,7 @@ Este projeto tem como objetivo demonstrar na prática os conceitos teóricos de 
 - **Consistência**: Manutenção da integridade dos dados através de blockchain
 
 ## 🏗️ Arquitetura do Sistema
-
+![Image](https://github.com/user-attachments/assets/f0df0626-ea4f-454b-bcb5-353c370b5636)
 
 ## 📋 Conceitos Implementados
 
@@ -78,3 +78,55 @@ Este projeto tem como objetivo demonstrar na prática os conceitos teóricos de 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Python 3.9+](https://www.python.org/downloads/) (opcional, para desenvolvimento)
+## Passo 1: Clonar o Repositório
+
+```bash
+git clone https://github.com/seu-usuario/cartorio-digital.git
+cd cartorio-digital
+```
+## Passo 2: Iniciar o Sistema
+### Construir e iniciar todos os contêineres
+```bash
+docker-compose up -d
+```
+### Verificar status dos contêineres
+```bash
+docker-compose ps
+```
+## Passo 3: Verificar Funcionamento
+### Verificar status dos nós
+```bash
+curl http://localhost:5001/status
+curl http://localhost:5002/status
+curl http://localhost:5003/status
+```
+### Registrar um documento
+```bash
+curl -X POST http://localhost:5001/register \
+  -H "Content-Type: application/json" \
+  -d '{"document":"Contrato de Aluguel - Teste"}'
+```
+### Verificar blockchain
+```bash
+curl http://localhost:5001/blockchain
+```
+## Passo 4: Executar Demonstração Completa
+### Executar script de demonstração
+```bash
+python demo.py
+```
+
+## 📊 Estrutura do Projeto
+```bash
+cartorio-digital/
+├── app/                          # Código da aplicação
+│   ├── __init__.py              # Inicialização do pacote
+│   ├── blockchain.py            # Implementação da blockchain
+│   ├── node.py                  # Lógica do nó distribuído
+│   ├── zk_utils.py              # Utilitários do ZooKeeper
+│   └── requirements.txt         # Dependências Python
+├── demo.py                       # Script de demonstração
+├── docker-compose.yml           # Orquestração Docker
+├── Dockerfile                   # Imagem Docker da aplicação
+└── README.md                    # Documentação do projeto
+```
