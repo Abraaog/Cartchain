@@ -81,7 +81,7 @@ Este projeto tem como objetivo demonstrar na prática os conceitos teóricos de 
 ## Passo 1: Clonar o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/cartorio-digital.git
+git clone https://github.com/Abraaog/CartorioDigital.git
 cd cartorio-digital
 ```
 ## Passo 2: Iniciar o Sistema
