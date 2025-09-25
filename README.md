@@ -193,3 +193,5 @@ docker-compose down
 - ✅ Replicação de dados bem-sucedida
 - ✅ Tolerância a falhas comprovada
 - ✅ Consistência mantida em todos os nós
+
+
