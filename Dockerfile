@@ -1,23 +1,27 @@
+# Usar uma imagem base leve do Python
 FROM python:3.9-slim
 
+# Definir o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Instalar dependências do sistema
-RUN apt-get update && apt-get install -y \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+# (Opcional) Instalar dependências do sistema
+RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
 
-# Atualizar pip para versão mais recente
+# Atualizar o pip
 RUN pip install --no-cache-dir --upgrade pip
 
-# Copiar e instalar dependências Python
+# Copiar o arquivo de dependências da subpasta 'app' para o WORKDIR
 COPY app/requirements.txt .
+
+# Instalar as dependências do Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar código da aplicação
+# Copiar todo o código da subpasta 'app' para o WORKDIR
 COPY app/ .
 
-ENV NODE_ID=1
+# Expor a porta da aplicação Flask
 EXPOSE 5000
 
+# Comando para iniciar a aplicação
 CMD ["python", "node.py"]
+
